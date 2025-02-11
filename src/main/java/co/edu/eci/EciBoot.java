@@ -30,7 +30,9 @@ public class EciBoot {
                 System.exit(0); // toca cargarla del disco y esto es para cuando no está presente
             }
             for (Method m : c.getDeclaredMethods()){
+                System.out.println("esta es la declaración de metodos "+m);
                 if(m.isAnnotationPresent(GetMapping.class)){ // ¿la anotación está presente?
+                    System.out.println("veces");
                     GetMapping a = m.getAnnotation(GetMapping.class);
                     services.put(a.value(),m); // necesito sacar la anotation
                 }
